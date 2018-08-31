@@ -40,11 +40,11 @@
 			<td style="width: 50px;height: 50px">역할</td>
 			<td>
 				<select name="roll" id="roll">
-					<option value="leader" selected="selected">팀장</option>
-					<option value="front">프론트개발</option>
-					<option value="back">백단개발</option>
-					<option value="android">안드로이드개발</option>
-					<option value="minfe">민폐</option>
+					<option value="팀장" selected="selected">팀장</option>
+					<option value="프론트개발">프론트개발</option>
+					<option value="백단개발">백단개발</option>
+					<option value="android">android</option>
+					<option value="민폐">민폐</option>
 				</select>
 			</td>
 		</tr>
@@ -57,3 +57,17 @@
   파일업로드: <input type="file" name="upfile"><br/>
   <input type="submit" value="파일업로드"> 
 </form>
+
+<script>
+	document.getElementById('modifyBtn')
+.addEventListener('click',function(){
+	alert('update Click !!');
+	var form = document.getElementById('updateForm');
+	form.action="${context}/member/modify/public/member/retrieve";
+	form.method ="POST";
+	form.submit();
+});
+
+$('#roll').val('${user.roll}').prop('selected',true);
+		
+</script>

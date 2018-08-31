@@ -3,6 +3,8 @@ package com.gms.web.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
 import com.gms.web.domain.ArticleDTO;
 
 public interface BoardService {

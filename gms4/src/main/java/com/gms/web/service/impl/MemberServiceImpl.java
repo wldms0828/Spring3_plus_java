@@ -15,7 +15,7 @@ import com.gms.web.mapper.MemberMapper;
 import com.gms.web.service.MemberService;
 @Service
 public class MemberServiceImpl implements MemberService{
-	@Autowired MemberMapper memberDAO;
+	@Autowired MemberMapper mapper;
 	@Override
 	public void add(MemberDTO p) {
 		SimpleDateFormat date = new SimpleDateFormat("yyyy");
@@ -37,39 +37,39 @@ public class MemberServiceImpl implements MemberService{
 		System.out.println("age : " + age);
 		System.out.println("성별을 정하는 숫자 : " + gd);
 		System.out.println("성별 : " + gender);
-		memberDAO.insert(p);
+		mapper.insert(p);
 	}
 
 	@Override
 	public List<?> list(Map<?, ?> p) {
-		return memberDAO.selectList(p);}
+		return mapper.selectList(p);}
 
 	@Override
 	public List<?> search(Map<?, ?> p) {
-		return memberDAO.selectSome(p);}
+		return mapper.selectSome(p);}
 
 	@Override
 	public MemberDTO retrieve(Map<?, ?> p) {
-		return memberDAO.selectOne(p);
+		return mapper.selectOne(p);
 	}
 
 	@Override
 	public int count(Map<?, ?> p) {
-		return memberDAO.count(p);}
+		return mapper.count(p);}
 
 	@Override
 	public void modify(MemberDTO p) {
-		memberDAO.update(p);		
+		mapper.update(p);		
 	}
 
 	@Override
 	public void remove(MemberDTO p) {
-		memberDAO.delete(p);
+		mapper.delete(p);
 			}
 
 	@Override
-	public boolean login(MemberDTO p) {
-		return memberDAO.login(p);
+	public String login(MemberDTO p) {
+		return mapper.login(p);
 	}
 
 }

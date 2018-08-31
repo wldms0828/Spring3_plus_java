@@ -33,7 +33,7 @@ app = {
 			alert('logout');
 			location.href = app.x()+'/member/logout';
 		});
-		$('#add_submit').click(()=>{
+		/*		$('#add_submit').click(()=>{
 			alert('add_submit click!!');	
 			$('#add_form')
 			.attr({
@@ -41,13 +41,15 @@ app = {
 				method : "POST"
 			})
 			.submit();
-/*
+		*/
+		/*
 			var form = document.getElementById('add_form');
 			form.action = app.x()+"/member/add";
 			form.method = "POST";
 			form.submit();
-*/
+
 		});
+		*/
 		$('#delete__btn').click(()=>{
 			alert('delete__btn click!!');
 			location.href = app.x()+'/move/delete/member/remove';

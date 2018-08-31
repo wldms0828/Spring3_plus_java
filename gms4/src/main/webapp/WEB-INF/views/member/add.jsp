@@ -2,19 +2,19 @@
 <div id="contentBox">
 <form id="add_form" name="add_form">
  	<div id="add_layout">
- 	<label for="userid"><b>아이디</b></label>
+ 	<label for="a"><b>아이디</b></label>
     <input type="text" placeholder="아이디 입력" name="userid" required>
     
-     <label for="psw"><b>Password</b></label>
+     <label for="b"><b>Password</b></label>
     <input type="password" placeholder="비밀번호 입력" name="password" required>
     
-    <label for="email"><b>이 름</b></label>
+    <label for="c"><b>이 름</b></label>
     <input type="text" placeholder="이 름 입 력" name="name" required>
     
-    <label for="email"><b>주민번호(생년월일-앞자리)</b></label>
+    <label for="d"><b>주민번호(생년월일-앞자리)</b></label>
     <input type="text" placeholder="(예시) 900101-1" name="ssn" required>
         
-       <label for="userid"><b>소속팀</b></label>
+       <label for="e"><b>소속팀</b></label>
            <input type="radio" name="teamid" 
            		value="none" checked="checked" />없음
            <input type="radio" name="teamid" 
@@ -26,7 +26,7 @@
            <input type="radio" name="teamid" 
            		value="코딩짱" />코딩스타
         <br /><br />
-         <label for="userid"><b>프로젝트역할</b></label>
+         <label for="f"><b>프로젝트역할</b></label>
         <select name="roll" id="roll">
         	 <option value="leader">팀장</option>
         	 <option value="front">프론트개발</option>
@@ -35,7 +35,7 @@
         	 <option value="minfe">민폐</option>
         </select>
        <br /><br />
-        <label for="userid"><b>수강과목</b></label>
+        <label for="g"><b>수강과목</b></label>
         <input type="checkbox" name="subject" 
         	value="java" checked="checked" /> Java
         <input type="checkbox" name="subject" value="clang" /> C언어
@@ -50,7 +50,28 @@
     </form>
     </div>
  
- 
+<script> 
+	document.getElementById('add_submit')
+	.addEventListener('click',function(){
+		alert('add_submit click!!');
+		var form = document.getElementById('add_form');
+		form.action = "${context}/member/add/public/member/login";
+		form.method = "POST";
+		form.submit();
+	});
+
+	
+/* 
+ $('#add_submit').click(function(){
+	alert('add_submit click!!');	
+	$('#add_form')
+	.attr({
+		action: "${context}/member/add",
+		method : "POST"
+	})
+	.submit();
+*/
+</script>
  
  
  
